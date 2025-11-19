@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alfred Finances — Painel Financeiro Inteligente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>💼 Alfred Finances</h1>
+    <ul>
+      <li class="active" data-section="simulador">💰 Simulador</li>
+      <li data-section="ranking">📊 Ranking</li>
+      <li data-section="perfil">🧭 Perfil</li>
+      <li data-section="panorama">📈 Panorama</li>
+    </ul>
+  </aside>
+
+  <main>
+    <!-- SIMULADOR -->
+    <section id="simulador" class="painel ativo">
+      <h2>💰 Simulador de Juros</h2>
+      <div class="simulador-container">
+        <div class="inputs">
+          <label>Valor Inicial (R$)</label>
+          <input type="number" id="valorInicial" placeholder="Ex: 1000">
+          <label>Taxa de Juros (% ao mês)</label>
+          <input type="number" id="taxa" placeholder="Ex: 1.5">
+          <label>Prazo (meses)</label>
+          <input type="number" id="prazo" placeholder="Ex: 12">
+          <button id="btnCalcular">Calcular</button>
+        </div>
+        <div class="resultado" id="resultado"></div>
+        <canvas id="graficoJuros" height="150"></canvas>
+      </div>
+    </section>
+
+    <!-- RANKING -->
+    <section id="ranking" class="painel">
+      <h2>📊 Ranking do Mercado</h2>
+      <div class="tabs">
+        <div class="tab active" data-tipo="Ação">Ações</div>
+        <div class="tab" data-tipo="FII">FIIs</div>
+        <div class="tab" data-tipo="Cripto">Criptos</div>
+      </div>
+      <canvas id="graficoAtivo" height="120"></canvas>
+      <div class="ranking-grid" id="rankingContainer"></div>
+    </section>
+
+    <!-- PERFIL DE INVESTIDOR -->
+    <section id="perfil" class="painel">
+      <h2>🧭 Perfil de Investidor</h2>
+      <div id="questionario"></div>
+      <button id="btnResultado">Ver Resultado</button>
+      <div id="resultadoPerfil"></div>
+      <canvas id="graficoPerfil" height="130"></canvas>
+    </section>
+
+    <!-- PANORAMA -->
+    <section id="panorama" class="painel">
+      <h2>📈 Panorama do Mercado</h2>
+      <canvas id="graficoPanorama" height="150"></canvas>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
